@@ -1,4 +1,7 @@
 # ShopBridgeApi
+## Databse used
+Mysql server 8.0.26
+
 1. ## List Of all items
 URI = /api/Item
 Method = get
