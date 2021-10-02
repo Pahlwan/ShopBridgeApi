@@ -28,7 +28,7 @@ namespace ShopBridgeAPI
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            string connectionString = "server=localhost; port=3306; database=ShopBridge; user=root; password=3010; Persist Security Info=False; Connect Timeout=300";
+            string connectionString = Configuration.GetConnectionString("DefaultConnection");
             DbContextOptionsBuilder dbContextBuilder = new DbContextOptionsBuilder().UseMySql(connectionString, ServerVersion.AutoDetect(connectionString), null);
             dbContextBuilder.EnableSensitiveDataLogging(true);
             PlutoContext plutoContext = new PlutoContext(dbContextBuilder.Options);
